@@ -1,4 +1,4 @@
-let { FAKE_USER_DATA } = require('../models/UserModelFake');
+let { FAKE_USER_DATA } = require("../models/UserModelFake");
 
 const QueryUserById = (id) => {
   let user;
@@ -16,7 +16,7 @@ const QueryListUsers = () => {
 
 const DeleteUserById = (id) => {
   FAKE_USER_DATA = FAKE_USER_DATA.filter(
-    (userData) => userData.id !== Number(id),
+    (userData) => userData.id !== Number(id)
   );
   return FAKE_USER_DATA;
 };
@@ -27,12 +27,11 @@ const PostUser = (id, name, age, email, role) => {
     name: name,
     age: age,
     email: email,
-    role: role || 'user',
+    role: role || "user",
   };
   FAKE_USER_DATA.push(user);
   return FAKE_USER_DATA;
 };
-
 
 module.exports = {
   QueryUserById,
